@@ -4,6 +4,7 @@ import domain.Jogador;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Stream;
 
 public class Principal {
     public static void main(String[] args) {
@@ -33,10 +34,12 @@ public class Principal {
         jogadores.add(iniesta);
         jogadores.add(xavi);
 
-        // aqui criei uma interface funcional e fiz um exemplo simples só para testar
-        ComparaNome<String> comparaNome = s ->
-                 s.equals("Messi");
 
-        System.out.println(comparaNome.valida(messi.getNome()));
+        /*
+        Usa a interface funcional para percorrer a lista da classe principal, retornar
+        apenas o jogador com o nome messi e printar o jogador
+         */
+        jogadores.stream().filter(jogador -> jogador.getNome().equals("Messi")).forEach(System.out::println);
+
     }
 }

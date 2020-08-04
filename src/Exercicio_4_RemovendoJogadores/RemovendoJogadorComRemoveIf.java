@@ -38,6 +38,8 @@ public class RemovendoJogadorComRemoveIf {
         jogadores.removeIf(jogador ->
                 jogador.getGols() < 160);
 
-        jogadores.forEach(joagador -> System.out.println(joagador));
+        jogadores.forEach(jogador -> jogador.jogadorArtilheiro());
+
+        jogadores.forEach(jogador -> System.out.println(jogador));
     }
 }

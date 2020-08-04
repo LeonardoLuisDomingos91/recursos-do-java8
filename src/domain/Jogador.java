@@ -32,6 +32,10 @@ public class Jogador {
         this.mundial = true;
     }
 
+    public void jogadorArtilheiro(){
+        this.nome = getNome() + " " + "é artilheiro";
+    }
+
     @Override
     public String toString() {
         return "Joagador " +
