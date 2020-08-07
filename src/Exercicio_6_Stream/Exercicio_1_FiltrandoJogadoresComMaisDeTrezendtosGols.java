@@ -4,6 +4,7 @@ import domain.Jogador;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Stream;
 
 public class Exercicio_1_FiltrandoJogadoresComMaisDeTrezendtosGols {
     public static void main(String[] args) {
@@ -34,13 +35,10 @@ public class Exercicio_1_FiltrandoJogadoresComMaisDeTrezendtosGols {
         jogadores.add(xavi);
         jogadores.add(zidane);
 
-        // aqui estou removendo os jogadores com mais de 300 gols usando Stream outro recurso do java 8 e
-        // estou tambem printando tudo no mesmo escopo sem a necessidade de fazer um for separado
         jogadores.stream()
-                .filter(joagador -> joagador.getGols() > 300).forEach(System.out::println);
+                .filter(jogador -> jogador.getGols() > 300)
+                .forEach(System.out::println);
 
-//        joagadorStream.forEach(System.out::println);
-
-
+        jogadores.forEach(System.out::println);
     }
 }

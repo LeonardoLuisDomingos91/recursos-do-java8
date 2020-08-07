@@ -1,10 +1,15 @@
 package domain;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Jogador {
 
     private String nome;
     private Integer gols;
     private Boolean mundial;
+
+    private List<Time> timeAnteriores;
 
     public Jogador(String nome, Integer gols) {
         this.nome = nome;
@@ -12,7 +17,8 @@ public class Jogador {
         this.mundial = false;
     }
 
-    public String getNome() {
+    public String getNome()
+    {
         return nome;
     }
 
@@ -32,8 +38,12 @@ public class Jogador {
         this.mundial = true;
     }
 
-    public void jogadorArtilheiro(){
-        this.nome = getNome() + " " + "é artilheiro";
+    public List<Time> getTimeAnteriores() {
+        return timeAnteriores;
+    }
+
+    public void setTimeAnteriores(List<Time> timeAnteriores) {
+        this.timeAnteriores = timeAnteriores;
     }
 
     @Override

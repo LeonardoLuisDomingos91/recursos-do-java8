@@ -1,12 +1,13 @@
-package Exercicio_1_loops;
+package Exercicio_8_Optional;
 
 import domain.Jogador;
+import exception.ListaEstaVazia;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
+import java.util.OptionalDouble;
 
-public class quartaManeiraForClasseAnonima {
+public class Exercicio_1_VerificandoMediaDeGols {
     public static void main(String[] args) {
 
         Jogador messi	=	new Jogador("Messi",	703);
@@ -34,5 +35,30 @@ public class quartaManeiraForClasseAnonima {
         jogadores.add(iniesta);
         jogadores.add(xavi);
 
+        double somaGols = 0.0;
+
+        for (Jogador jogador: jogadores){
+            somaGols += jogador.getGols();
+        }
+
+        double mediaDeGols;
+
+        if (jogadores.isEmpty()){
+            mediaDeGols = 0.0;
+        }else{
+            mediaDeGols = somaGols / jogadores.size();
+        }
+
+       System.out.println(mediaDeGols);
+
+        Double media = jogadores
+                .stream()
+                .mapToInt(Jogador::getGols)
+                .average()
+                .orElseThrow(() -> new ListaEstaVazia("Lista esta vazia"));
+
+      //  Double mediaGols = media.orElse(0.0);
+
+       // System.out.println(media);
     }
 }

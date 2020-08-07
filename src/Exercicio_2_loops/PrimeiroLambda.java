@@ -4,6 +4,7 @@ import domain.Jogador;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Consumer;
 
 public class PrimeiroLambda {
     public static void main(String[] args) {
@@ -33,11 +34,7 @@ public class PrimeiroLambda {
         jogadores.add(iniesta);
         jogadores.add(xavi);
 
-        // aqui estou tornando todos jogadores campeões todos vão ficar true foi o que pensei para mpstrar que o forEach não serve só para printar od dados de um objeto
-        jogadores.forEach(joagador -> joagador.tornaCampeao());
-
-        // aqui usamos uma expressão lambda é um recurso do java 8 com esse recurso não precisamos mais criar classes anonimas ja fazemos direto
-        jogadores.forEach(joagador -> System.out.println(joagador));
-
+        jogadores.forEach(jogador
+                -> System.out.println(jogador));
     }
 }

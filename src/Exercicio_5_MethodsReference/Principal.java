@@ -33,15 +33,11 @@ public class Principal {
         jogadores.add(iniesta);
         jogadores.add(xavi);
 
-        jogadores.forEach(joagador -> System.out.println(joagador));
+        jogadores.forEach(jogador -> System.out.println(jogador));
 
-        System.out.println("--------------------------------------");
-
-//        jogadores.forEach(joagador -> joagador.tornaCampeao());
-
-        // Aqui estou tornando todos jogadores campeões e usando outro recurso novo do java 8 o methods references
         jogadores.forEach(Jogador::tornaCampeao);
-        // aqui tbm estou printando os elementos da lista usando methods references
+
         jogadores.forEach(System.out::println);
+
     }
 }

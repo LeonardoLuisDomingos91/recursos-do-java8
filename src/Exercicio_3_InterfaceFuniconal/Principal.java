@@ -34,12 +34,13 @@ public class Principal {
         jogadores.add(iniesta);
         jogadores.add(xavi);
 
+        ComparaNome<String> comparaNome = (String s) -> {
+                return s.equals("Messi");
+            };
 
-        /*
-        Usa a interface funcional para percorrer a lista da classe principal, retornar
-        apenas o jogador com o nome messi e printar o jogador
-         */
-        jogadores.stream().filter(jogador -> jogador.getNome().equals("Messi")).forEach(System.out::println);
-
-    }
+        jogadores.stream()
+                .map(Jogador::getNome)
+                .filter(comparaNome::valida)
+                .forEach(System.out::println);
+        }
 }

@@ -35,13 +35,12 @@ public class Exercicio_3_ListandoApenasGols {
         jogadores.add(xavi);
         jogadores.add(zidane);
 
-        // aqui estou guardando em uma lista de inteiros apenas os gols dos jogadores
-        // estou perccorendo a lista de Jogador e pegando apenas os gols para fazer isso estou usando o map outro recurso do java 8
-        List<Integer> gols = jogadores.stream()
-                .map(Jogador::getGols)
+        List<Integer> listaDeGols = new ArrayList<>();
+
+        listaDeGols = jogadores.stream()
+                .map(jogador -> jogador.getGols())
                 .collect(Collectors.toList());
 
-        gols.forEach(System.out::println);
-
+        listaDeGols.forEach(System.out::println);
     }
 }

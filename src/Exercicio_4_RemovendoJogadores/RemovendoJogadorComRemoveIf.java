@@ -34,12 +34,10 @@ public class RemovendoJogadorComRemoveIf {
         jogadores.add(iniesta);
         jogadores.add(xavi);
 
-        // Aqui removi todos os jogadores com menos de 160 gols usando o removeIf mais um metodo novo do java8 que recebe um predicate uma interface funcional
-        jogadores.removeIf(jogador ->
-                jogador.getGols() < 160);
+        jogadores.removeIf(jogador -> jogador.getGols() < 160);
 
-        jogadores.forEach(jogador -> jogador.jogadorArtilheiro());
-
-        jogadores.forEach(jogador -> System.out.println(jogador));
+        jogadores.stream()
+                .peek(jogador -> jogador.setNome(jogador.getNome()+ "é artilheiro"))
+                .forEach(System.out::println);
     }
 }

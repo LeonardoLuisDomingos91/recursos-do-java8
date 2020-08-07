@@ -33,11 +33,8 @@ public class PrimeiroFor {
         jogadores.add(iniesta);
         jogadores.add(xavi);
 
-        // Iterando a lista com um for normal
-
-        for(int i= 0 ; i < jogadores.size(); i ++){
-            Jogador j = jogadores.get(i);
-            System.out.println(j);
+        for(Jogador jogador : jogadores){
+            System.out.println(jogador);
         }
     }
 }

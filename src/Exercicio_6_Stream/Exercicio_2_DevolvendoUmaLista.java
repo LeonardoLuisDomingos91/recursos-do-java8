@@ -35,22 +35,10 @@ public class Exercicio_2_DevolvendoUmaLista {
         jogadores.add(xavi);
         jogadores.add(zidane);
 
-        System.out.println("Todos os jogadores do time");
-        jogadores.forEach(System.out::println);
+       List<Jogador> jogadoresArtilheiros = jogadores.stream()
+                 .filter(jogador -> jogador.getGols() > 300)
+                 .collect(Collectors.toList());
 
-        System.out.println("Jogadores que tem mais de 300 gols");
-
-       // jogadores.stream().filter(joagador -> joagador.getGols() > 300).forEach(System.out::println);
-
-        // aqui criei uma nova lista para guardar os jogadores que tem mais de 300 gols
-        List<Jogador> goleadores = new ArrayList<>();
-
-        // aqui estou guardando todos os jogadores com mais de 300 gols com o recurso collect(collectors.tolist
-       goleadores = jogadores.stream().filter(joagador -> joagador.getGols() > 300)
-                .collect(Collectors.toList());
-
-        goleadores.forEach(System.out::println);
-
-
+       jogadoresArtilheiros.forEach(System.out::println);
     }
 }

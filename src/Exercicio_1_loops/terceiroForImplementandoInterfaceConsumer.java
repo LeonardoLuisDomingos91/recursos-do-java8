@@ -34,15 +34,18 @@ public class terceiroForImplementandoInterfaceConsumer {
         jogadores.add(iniesta);
         jogadores.add(xavi);
 
-        // Usando a referencia da classe criada para passar dentro do forEach
-        MostraJogador mostraJogador = new MostraJogador();
-        jogadores.forEach(mostraJogador);  // Usando o forEach herdado pela Interface List
+//        Consumer<Jogador> mostrar = new Consumer<Jogador>() {
+//            @Override
+//            public void accept(Jogador jogador) {
+//                System.out.println(jogador);
+//            }
+//        };
+        jogadores.forEach(new Consumer<Jogador>() {
+            @Override
+            public void accept(Jogador jogador) {
+                System.out.println(jogador);
+            }
+        });
     }
 }
-// criando uma classe para implementar a interface Consummer para poder usar no forEach
-class MostraJogador implements Consumer<Jogador> {
-    @Override
-    public void accept(Jogador jogador) {
-        System.out.println(jogador);
-    }
-}
+

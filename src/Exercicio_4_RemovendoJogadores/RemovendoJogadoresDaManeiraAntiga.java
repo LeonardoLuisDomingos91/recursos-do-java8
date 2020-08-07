@@ -34,8 +34,6 @@ public class RemovendoJogadoresDaManeiraAntiga {
         jogadores.add(iniesta);
         jogadores.add(xavi);
 
-        // aqui fiz um for usando Iterator para remover jogadores com menos de 160 gols
-        // tive que usar um iterator pq percorrendo uma lista não é possivel remover ou adicionar objetos na mesma
         for (Iterator j = jogadores.iterator(); j.hasNext(); ) {
             Jogador jogador = (Jogador) j.next();
             if (jogador.getGols() < 160) {

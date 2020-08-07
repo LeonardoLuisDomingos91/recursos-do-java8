@@ -4,6 +4,7 @@ import domain.Jogador;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Consumer;
 
 public class SegundoForJava5 {
     public static void main(String[] args) {
@@ -33,9 +34,15 @@ public class SegundoForJava5 {
         jogadores.add(iniesta);
         jogadores.add(xavi);
 
-        // Aqui iterando a lista com o for feito apartir do java 5
-        for (Jogador jogador : jogadores){
-            System.out.println(jogador);
-        }
+        Mostrador mostrador = new Mostrador();
+
+        jogadores.forEach(mostrador);
+    }
+}
+
+class Mostrador implements Consumer<Jogador>{
+    @Override
+    public void accept(Jogador jogador) {
+        System.out.println(jogador);
     }
 }
